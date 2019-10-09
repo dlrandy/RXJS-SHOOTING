@@ -810,7 +810,7 @@
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
       },
       "../src/02-double-click.ts": {
-        "version": "aae67e28eb8e5a58082a7d6e83de8799b8d97d1074758f85c09ac99a315d636b",
+        "version": "99b2ebb53b842c724c69b607193d6735c06e3549cc9ceb2156c6f01d088c7b25",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
       },
       "../src/03-why-reactive-programming.ts": {
@@ -826,20 +826,24 @@
         "signature": "1a288b2baee026d274e45fff6e6b532c8ee8d40123115a7008cd910df733858c"
       },
       "../src/04-request-and-response.ts": {
-        "version": "4ac334ac50a637e15c51917f76b1bfb3e55b8b8c336b95e69428e09158a36202",
+        "version": "d84189142666da02c4532f55538a08f27e0ef0ee2c6bbdb474417ff33d5ae081",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
       },
-      "../src/05-render-to-dom.ts": {
-        "version": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "../src/05-refresh.ts": {
+        "version": "b330398add8bd7ac208cba1dc16bcdcd6a0613339fdeb22833e984228fca703e",
+        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+      },
+      "../src/bkp.ts": {
+        "version": "ba40b313d61556abb2bd1c53e942eef6509b7a2342dbbdc29bb0f516f9c72c01",
+        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
       },
       "../src/util.ts": {
         "version": "2fb1de8ccb2b4d6f83899c8f35cb30639488603dcee2191a1f397fc384ad4a64",
         "signature": "a5440d9644630c8dc0cdc26df7dfae923b6aec22b89044fc6baa2a35e7abca00"
       },
       "../src/main.ts": {
-        "version": "cc928c40506ff0a2061c394108ca6929daa892f2cca49d7a66c076911093c91a",
-        "signature": "d502ec6d3ee93cc300d4ee2be748b86e7b2301b8003532b5b0f3853f581208e7"
+        "version": "06ca1d4b2522120179862c5639095d9188344a6215f5897a4523903cb5acaf5f",
+        "signature": "e1d5c904c09cb41d36b245458b8e9b5f8c3ad30dba52ecb56daae6a9cf1e6a9f"
       },
       "../src/demo/stop-watch.ts": {
         "version": "d9704440fdb23660191a22cb77fd797b61cca7e0485c2d6cc60e8334d608e551",
@@ -2352,7 +2356,17 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/05-render-to-dom.ts": [
+      "../src/05-refresh.ts": [
+        "../node_modules/rxjs/index.d.ts",
+        "../node_modules/rxjs/operators/index.d.ts",
+        "../node_modules/rxjs/fetch/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/bkp.ts": [
+        "../node_modules/rxjs/index.d.ts",
+        "../node_modules/rxjs/operators/index.d.ts",
+        "../node_modules/rxjs/fetch/index.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2361,7 +2375,7 @@
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../src/main.ts": [
-        "../src/04-request-and-response.ts",
+        "../src/02-double-click.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -3928,6 +3942,9 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/main.ts": [
+        "../src/02-double-click.ts"
+      ],
       "../src/types/global.d.ts": [
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
@@ -4416,8 +4433,9 @@
       "../node_modules/rxjs/internal/observable/dom/fetch.d.ts",
       "../node_modules/rxjs/fetch/index.d.ts",
       "../src/04-request-and-response.ts",
+      "../src/05-refresh.ts",
+      "../src/bkp.ts",
       "../src/util.ts",
-      "../src/main.ts",
       "../src/demo/stop-watch.ts",
       "../src/types/global.d.ts",
       "../node_modules/@types/estree/index.d.ts",
@@ -4466,7 +4484,7 @@
       "../node_modules/@types/node/ts3.2/globals.d.ts",
       "../node_modules/@types/node/ts3.2/index.d.ts",
       "../node_modules/@types/resolve/index.d.ts",
-      "../src/05-render-to-dom.ts"
+      "../src/main.ts"
     ]
   },
   "version": "3.6.3"

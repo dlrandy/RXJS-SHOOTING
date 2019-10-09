@@ -1,27 +1,33 @@
-import {of, Observable, } from 'rxjs';
-import { mergeMap, switchMap, map, } from 'rxjs/operators';
+import {of, Observable, fromEvent, merge, } from 'rxjs';
+import { mergeMap, switchMap, map, shareReplay, share, } from 'rxjs/operators';
 import {fromFetch} from 'rxjs/fetch';
 
 let request$ = of('https://api.github.com/users')
 
-let response$ = request$.pipe(
-      mergeMap(url => fromFetch(url)
-        .pipe(
-          switchMap(res => {
-            if (res.ok) {
-              return res.json()
-            } else {
-              return of({error: true, message: `Error ${res.status}`});
-            }
-          })
-        )
-      )
+//
+const refreshBtn = _$('.refresh') as HTMLElement
+const refresh$ = fromEvent(refreshBtn, 'click').pipe(map(evt => {
+  let randomOffset = Math.floor(Math.random()*500);
+    return 'https://api.github.com/users?since=' + randomOffset;
+}))
+
+//
+let response$ = merge(request$, refresh$).pipe(
+    mergeMap(url => fromFetch(url).pipe(
+      switchMap(res => {
+        if (res.ok) {
+          return res.json()
+        } else {
+          return of({error: true, message: `Error ${res.status}`});
+        }
+      }))
     )
+  )
+//, share()
 
 
 function createSuggestionStream(res$ : Observable < Array < any >>) {
-  return res$.pipe(
-    map((listUser : any) => listUser[Math.floor(Math.random() * listUser.length)]))
+  return res$.pipe(map((listUser : any) => listUser[Math.floor(Math.random() * listUser.length)]))
 }
 
 let suggestion1$ = createSuggestionStream(response$)
